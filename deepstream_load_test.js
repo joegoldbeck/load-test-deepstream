@@ -7,7 +7,7 @@ meteorDown.init(function (Meteor) {
 			Meteor.subscribe('singleDeepstream', 'curat0r', '3zruKDSm', function (error, result) {
 				setTimeout(function() {
 					Meteor.kill();
-				}, 60000);
+				}, process.env.SESSION_LENGTH || 60000);
 			});
 		});
 	});
