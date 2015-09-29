@@ -3,13 +3,13 @@ console.log('LOAD TEST GOOOOOOO!')
 // visit homepage and a single deepstream, then watch for 60 seconds
 meteorDown.init(function (Meteor) {
 	Meteor.subscribe('deepstreamsOnAir', function (error, result) {
-		Meteor.subscribe('bestStreams', function (error, result) {
+		// Meteor.subscribe('bestStreams', function (error, result) {
 			Meteor.subscribe('singleDeepstream', 'curat0r', '3zruKDSm', function (error, result) {
 				setTimeout(function() {
 					Meteor.kill();
 				}, (parseInt(process.env.SESSION_LENGTH) * 1000) || 60000);
 			});
-		});
+		// });
 	});
 });
 
