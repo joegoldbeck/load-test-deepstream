@@ -4,20 +4,20 @@ console.log('LOAD TEST GOOOOOOO!')
 // visit homepage and a single deepstream, then watch for 60 seconds
 meteorDown.init(function (Meteor) {
 
-	var observer = Meteor.observe("deepstreams");
-	  observer.added = function(id) {
-	    console.log("[ADDED] to " + observer.name + ":  " + id);
-	  };
-	  observer.changed = function(id, oldFields, clearedFields, newFields) {
-	    console.log("[CHANGED] in " + observer.name + ":  " + id);
-	    console.log("[CHANGED] old field values: ", oldFields);
-	    console.log("[CHANGED] cleared fields: ", clearedFields);
-	    console.log("[CHANGED] new fields: ", newFields);
-	  };
-	  observer.removed = function(id, oldValue) {
-	    console.log("[REMOVED] in " + observer.name + ":  " + id);
-	    console.log("[REMOVED] previous value: ", oldValue);
-	  };
+	// var observer = Meteor.observe("deepstreams");
+	//   observer.added = function(id) {
+	//     console.log("[ADDED] to " + observer.name + ":  " + id);
+	//   };
+	//   observer.changed = function(id, oldFields, clearedFields, newFields) {
+	//     console.log("[CHANGED] in " + observer.name + ":  " + id);
+	//     console.log("[CHANGED] old field values: ", oldFields);
+	//     console.log("[CHANGED] cleared fields: ", clearedFields);
+	//     console.log("[CHANGED] new fields: ", newFields);
+	//   };
+	//   observer.removed = function(id, oldValue) {
+	//     console.log("[REMOVED] in " + observer.name + ":  " + id);
+	//     console.log("[REMOVED] previous value: ", oldValue);
+	//   };
 
 	Meteor.subscribe('deepstreamsOnAir', function (error, result) {
 		Meteor.subscribe('deepstreamContext', '3zruKDSm', function (error, result) {
